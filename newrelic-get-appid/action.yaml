@@ -1,0 +1,17 @@
+# action.yml
+name: 'Get New Relic App Id'
+description: 'Get New Relic App Id'
+inputs:
+  app-name:
+    description: 'new relic application name'
+    required: true
+  api-key:
+    description: 'new relic api key'
+    required: true
+outputs:
+  nr_app_id:
+    description: 'New Relic Application Id'
+runs:
+  using: docker
+  image: Dockerfile
+  entrypoint: /entrypoint.sh
