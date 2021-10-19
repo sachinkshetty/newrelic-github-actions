@@ -9,4 +9,4 @@ response=$(curl -X GET 'https://api.newrelic.com/v2/applications.json' \
                      -G -d 'filter[name]=$app-name' )
 
 nr_app_id=$(jq ".applications[].id" <<< "$response")
-echo "::set-output name=nr_app_id::$nr_app_id"
+echo "::set-output name=nr_app_id::$nr_app_id" 
