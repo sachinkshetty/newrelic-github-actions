@@ -1,9 +1,8 @@
 # Container image that runs your code
 FROM alpine:3.10
 
-RUN
-apk add --no-cache curl \
-apk add --no-cache jq \
+RUN apk add --update curl && \
+    rm -rf /var/cache/apk/*
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
